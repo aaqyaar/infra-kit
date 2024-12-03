@@ -55,8 +55,6 @@ else
     exit 1
 fi
 
-
-# install let's encrypt
 echo "Installing Let's Encrypt..." | tee -a "$LOG_FILE"
 apt install -y certbot python3-certbot-nginx &>> "$LOG_FILE"
 
