@@ -54,3 +54,20 @@ else
     echo "Nginx configuration failed. Check the log file for details." | tee -a "$LOG_FILE"
     exit 1
 fi
+
+
+# install let's encrypt
+echo "Installing Let's Encrypt..." | tee -a "$LOG_FILE"
+apt install -y certbot python3-certbot-nginx &>> "$LOG_FILE"
+
+echo "Configuring Let's Encrypt..." | tee -a "$LOG_FILE"
+certbot --nginx -d admin.memis.so --non-interactive --agree-tos -m
+
+if systemctl status nginx &>> "$LOG_FILE"; then
+    echo "Let's Encrypt configured successfully." | tee -a "$LOG_FILE"
+else
+    echo "Let's Encrypt configuration failed. Check the log file for details." | tee -a "$LOG_FILE"
+    exit 1
+fi
+
+echo "Nginx setup complete." | tee -a "$LOG_FILE"
