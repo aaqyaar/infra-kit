@@ -32,7 +32,7 @@ Scripts for installing and configuring:
 
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/aaqyaar/infra-kit.git
    cd server-setup
    ```
 2. Run the necessary setup scripts or deploy using Kubernetes & Helm.
