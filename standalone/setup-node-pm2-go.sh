@@ -41,6 +41,7 @@ else
     exit 1
 fi
 
+
 echo "=================================" | tee -a "$LOG_FILE"
 echo "Setup completed successfully!" | tee -a "$LOG_FILE"
 echo "Node.js version: $(node -v)" | tee -a "$LOG_FILE"

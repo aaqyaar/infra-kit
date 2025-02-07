@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-service
+  namespace: staging
+data:
+  .env: |
+    APP_PORT=:8080
+    APP_MODE=release
+    APP_LOG_LEVEL=debug
+    APP_LOG_FILE=log.log

@@ -1,47 +1,46 @@
-# Server Scripts
+# Server Setup Repository
 
-## Table of Contents
+## Overview
 
-1. [Initial Server Setup](#initial-server-setup)
+This repository provides scripts and configurations for setting up servers, deploying applications, and managing infrastructure efficiently. It includes standalone server deployment scripts, Kubernetes configurations, Helm charts, and CI/CD integration.
 
-## Initial Server Setup
+## Features
 
-### Update and Upgrade
+### 🖥️ **Standalone Server Setup**
 
-```bash
-sudo apt update
-sudo apt upgrade
-```
+Scripts for installing and configuring:
 
-### Create a New User
+- **Databases** (MySQL, PostgreSQL, MongoDB, etc.)
+- **Node.js** & **Golang** environments
+- **Nginx** for web server setup
+- **PM2** for process management
 
-```bash
-sudo adduser username
-sudo usermod -aG sudo username
-```
+### ☸️ **Kubernetes (K8s) Configurations**
 
-### Set Up SSH Key
+- **Ingress, Services, Deployments, HPA, Jobs**
+- **Optimized for scalability & reliability**
 
-```bash
-ssh-keygen
-ssh-copy-id username@server_ip
-```
+### 🎛 **Helm Charts**
 
-### Disable Password Authentication
+- Deployment of databases using **Helm** for better manageability
 
-```bash
-sudo nano /etc/ssh/sshd_config
-```
+### 🔄 **CI/CD Integration**
 
-Change `PasswordAuthentication` to `no` and restart the SSH service.
+- Automated deployments using CI/CD pipelines
 
-```bash
-sudo systemctl restart ssh
-```
+## Usage
 
-### Set Up Firewall
+1. Clone the repository:
+   ```sh
+   git clone <repo-url>
+   cd server-setup
+   ```
+2. Run the necessary setup scripts or deploy using Kubernetes & Helm.
 
-```bash
-sudo ufw allow OpenSSH
-sudo ufw enable
-```
+## Contributions
+
+Feel free to contribute by submitting a pull request!
+
+## License
+
+This project is open-source under the **MIT License**.
